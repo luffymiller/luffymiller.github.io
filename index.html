@@ -3,405 +3,222 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luffy Miller | B2B Brand Strategist & Packaging Architect</title>
+    <title>Luffy Miller | B2B Brand Growth Strategist & Packaging Architect</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-dark: #030712;
-            --card-bg: rgba(17, 24, 39, 0.65);
+            --bg: #0b0f17;
+            --card-bg: rgba(22, 30, 46, 0.7);
             --card-border: rgba(255, 255, 255, 0.08);
-            --accent-glow: #38bdf8;
-            --purple-glow: #818cf8;
-            --text-primary: #f9fafb;
-            --text-secondary: #9ca3af;
-            --text-muted: #6b7280;
-            --gradient-accent: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
-            --glass-border: linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.02));
+            --accent-cyan: #38bdf8;
+            --accent-indigo: #818cf8;
+            --accent-purple: #c084fc;
+            --accent-gradient: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --text-dim: #64748b;
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            scroll-behavior: smooth;
-        }
-
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--bg-dark);
-            color: var(--text-primary);
+            font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
             line-height: 1.6;
             overflow-x: hidden;
-            position: relative;
+            background-image: 
+                radial-gradient(circle at 15% 15%, rgba(56, 189, 248, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 85% 65%, rgba(129, 140, 248, 0.08) 0%, transparent 40%);
         }
 
-        /* Animated Mesh Background */
-        .bg-mesh {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: -1;
-            overflow: hidden;
-            background: 
-                radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.12) 0%, transparent 40%),
-                radial-gradient(circle at 90% 80%, rgba(129, 140, 248, 0.12) 0%, transparent 40%),
-                radial-gradient(circle at 50% 50%, rgba(192, 132, 252, 0.08) 0%, transparent 50%);
-        }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
 
-        .bg-grid {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background-image: linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
-                              linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
-            background-size: 50px 50px;
-            z-index: -1;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        /* Navbar */
+        /* Navigation Bar */
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 24px 0;
             border-bottom: 1px solid var(--card-border);
-            backdrop-filter: blur(12px);
+            backdrop-filter: blur(10px);
             position: sticky;
             top: 0;
-            z-index: 50;
+            z-index: 100;
+            background: rgba(11, 15, 23, 0.85);
         }
-
-        .logo {
-            font-weight: 800;
-            font-size: 1.4rem;
-            letter-spacing: -0.5px;
-            background: var(--gradient-accent);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 28px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 500;
+        .logo { font-weight: 800; font-size: 1.3rem; letter-spacing: -0.5px; background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .nav-links { display: flex; gap: 24px; list-style: none; align-items: center; }
+        .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--accent-cyan); }
+        .nav-btn {
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            color: var(--accent-cyan) !important;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-weight: 600;
             transition: all 0.3s ease;
         }
-
-        .nav-links a:hover {
-            color: var(--accent-glow);
-            text-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
-        }
+        .nav-btn:hover { background: rgba(56, 189, 248, 0.25); transform: translateY(-2px); }
 
         /* Hero Section */
         .hero {
-            padding: 100px 0 60px;
+            padding: 90px 0 60px;
             display: grid;
             grid-template-columns: 1.2fr 0.8fr;
-            gap: 50px;
+            gap: 40px;
             align-items: center;
         }
-
         .status-badge {
             display: inline-flex;
             align-items: center;
             gap: 8px;
             background: rgba(56, 189, 248, 0.08);
-            border: 1px solid rgba(56, 189, 248, 0.3);
-            color: var(--accent-glow);
+            border: 1px solid rgba(56, 189, 248, 0.25);
+            color: var(--accent-cyan);
             padding: 6px 16px;
             border-radius: 30px;
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             font-weight: 600;
             margin-bottom: 24px;
-            box-shadow: 0 0 15px rgba(56, 189, 248, 0.15);
         }
+        .status-dot { width: 7px; height: 7px; background-color: var(--accent-cyan); border-radius: 50%; box-shadow: 0 0 8px var(--accent-cyan); }
 
-        .status-dot {
-            width: 8px;
-            height: 8px;
-            background-color: var(--accent-glow);
+        h1 { font-size: 3rem; font-weight: 800; line-height: 1.15; letter-spacing: -1px; margin-bottom: 20px; }
+        .hero p { font-size: 1.15rem; color: var(--text-muted); margin-bottom: 32px; }
+
+        .profile-img-container { text-align: center; position: relative; }
+        .profile-img-frame {
+            width: 240px;
+            height: 240px;
             border-radius: 50%;
-            box-shadow: 0 0 10px var(--accent-glow);
-            animation: pulse 2s infinite;
+            padding: 6px;
+            background: var(--accent-gradient);
+            display: inline-block;
+            box-shadow: 0 10px 40px rgba(56, 189, 248, 0.25);
         }
+        .profile-img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; background-color: var(--card-bg); }
 
-        @keyframes pulse {
-            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.7); }
-            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(56, 189, 248, 0); }
-            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(56, 189, 248, 0); }
-        }
-
-        h1 {
-            font-size: 3.6rem;
-            font-weight: 800;
-            line-height: 1.1;
-            letter-spacing: -1.5px;
-            margin-bottom: 20px;
-        }
-
-        .gradient-text {
-            background: var(--gradient-accent);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero p {
-            font-size: 1.15rem;
-            color: var(--text-secondary);
-            margin-bottom: 36px;
-            font-weight: 400;
-        }
-
-        /* Profile Image Container */
-        .profile-wrapper {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .profile-card {
-            position: relative;
-            width: 280px;
-            height: 280px;
-            border-radius: 50%;
-            padding: 8px;
-            background: var(--gradient-accent);
-            box-shadow: 0 0 50px rgba(56, 189, 248, 0.25);
-            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        .profile-card:hover {
-            transform: scale(1.05) rotate(2deg);
-            box-shadow: 0 0 70px rgba(129, 140, 248, 0.4);
-        }
-
-        .profile-img {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            object-fit: cover;
-            background: #111827;
-            border: 4px solid var(--bg-dark);
-        }
-
-        /* Buttons */
-        .cta-group {
-            display: flex;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-
+        /* Action Buttons */
+        .cta-group { display: flex; gap: 16px; flex-wrap: wrap; }
         .btn {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            padding: 14px 32px;
-            border-radius: 12px;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 10px;
             font-size: 0.95rem;
-            font-weight: 700;
+            font-weight: 600;
             text-decoration: none;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
+            transition: all 0.25s ease;
         }
+        .btn-primary { background: var(--accent-gradient); color: #0b0f17; box-shadow: 0 4px 20px rgba(56, 189, 248, 0.25); }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 28px rgba(56, 189, 248, 0.4); }
+        .btn-secondary { background: var(--card-bg); color: var(--text-main); border: 1px solid var(--card-border); }
+        .btn-secondary:hover { border-color: rgba(255, 255, 255, 0.25); transform: translateY(-2px); }
 
-        .btn-primary {
-            background: var(--gradient-accent);
-            color: #030712;
-            box-shadow: 0 4px 25px rgba(56, 189, 248, 0.3);
-        }
+        /* Section Styling */
+        .section-header { margin: 60px 0 32px; }
+        .section-title { font-size: 1.8rem; font-weight: 700; letter-spacing: -0.5px; }
+        .section-desc { color: var(--text-muted); font-size: 0.95rem; margin-top: 6px; }
 
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 35px rgba(56, 189, 248, 0.5);
-        }
-
-        .btn-secondary {
-            background: rgba(17, 24, 39, 0.8);
-            color: var(--text-primary);
-            border: 1px solid var(--card-border);
-            backdrop-filter: blur(10px);
-        }
-
-        .btn-secondary:hover {
-            border-color: var(--accent-glow);
-            transform: translateY(-3px);
-            background: rgba(31, 41, 55, 0.9);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
-        }
-
-        /* Featured Brand Platform Box (Box Zilla Hub) */
+        /* Featured Commercial Platform Banner (Box Zilla) */
         .featured-banner {
-            margin: 60px 0 90px;
-            background: linear-gradient(135deg, rgba(17, 24, 39, 0.8) 0%, rgba(30, 41, 59, 0.8) 100%);
+            margin: 40px 0 60px;
+            background: linear-gradient(135deg, rgba(22, 30, 46, 0.9) 0%, rgba(15, 23, 42, 0.9) 100%);
             border: 1px solid rgba(56, 189, 248, 0.3);
-            border-radius: 24px;
-            padding: 48px;
+            border-radius: 20px;
+            padding: 40px;
             position: relative;
-            overflow: hidden;
-            backdrop-filter: blur(16px);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-            transition: border-color 0.3s ease;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
         }
+        .featured-tag { font-size: 0.8rem; font-weight: 700; color: var(--accent-cyan); text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 10px; }
+        .featured-banner h2 { font-size: 1.8rem; font-weight: 700; margin-bottom: 12px; }
+        .featured-banner p { color: var(--text-muted); font-size: 0.98rem; margin-bottom: 24px; max-width: 700px; }
 
-        .featured-banner:hover {
-            border-color: rgba(129, 140, 248, 0.6);
-        }
-
-        .featured-banner::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 6px;
-            height: 100%;
-            background: var(--gradient-accent);
-        }
-
-        .featured-tag {
-            font-size: 0.8rem;
-            font-weight: 800;
-            color: var(--accent-glow);
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 12px;
-        }
-
-        .featured-banner h2 {
-            font-size: 2.2rem;
-            font-weight: 800;
-            margin-bottom: 14px;
-            letter-spacing: -0.5px;
-        }
-
-        .featured-banner p {
-            color: var(--text-secondary);
-            font-size: 1.05rem;
-            margin-bottom: 28px;
-            max-width: 700px;
-        }
-
-        /* Cards & Section Headers */
-        .section-header {
-            margin-bottom: 36px;
-        }
-
-        .section-title {
-            font-size: 2rem;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 28px;
-            margin-bottom: 90px;
-        }
-
+        /* Grid Cards */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 24px; }
         .card {
             background: var(--card-bg);
             border: 1px solid var(--card-border);
-            border-radius: 20px;
-            padding: 36px;
-            backdrop-filter: blur(16px);
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            position: relative;
+            border-radius: 16px;
+            padding: 32px;
+            transition: all 0.3s ease;
         }
+        .card:hover { transform: translateY(-6px); border-color: rgba(56, 189, 248, 0.4); }
+        .card h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 10px; }
+        .card p { color: var(--text-muted); font-size: 0.92rem; line-height: 1.6; }
 
-        .card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(56, 189, 248, 0.4);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(56, 189, 248, 0.1);
-        }
-
-        .card-icon {
-            width: 50px;
-            height: 50px;
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 14px;
+        /* Author Social & Web Profiles Hub */
+        .profiles-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
+        .profile-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 20px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text-main);
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            margin-bottom: 24px;
+            justify-content: space-between;
+            transition: all 0.25s ease;
+        }
+        .profile-card:hover { transform: translateY(-4px); border-color: var(--accent-cyan); background: rgba(30, 41, 59, 0.9); box-shadow: 0 8px 20px rgba(0,0,0,0.3); }
+        .profile-info h4 { font-size: 0.95rem; font-weight: 700; }
+        .profile-info span { font-size: 0.78rem; color: var(--text-muted); }
+        .profile-arrow { color: var(--accent-cyan); font-weight: bold; font-size: 1.1rem; transition: transform 0.2s; }
+        .profile-card:hover .profile-arrow { transform: translate(3px, -3px); }
+
+        /* Brand Growth Funnel Content Section */
+        .funnel-container {
+            background: rgba(15, 23, 42, 0.6);
             border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 45px;
+            margin: 60px 0;
         }
+        .funnel-step { display: grid; grid-template-columns: 80px 1fr; gap: 20px; margin-bottom: 30px; align-items: start; }
+        .funnel-step:last-child { margin-bottom: 0; }
+        .funnel-num {
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 2.2rem;
+            font-weight: 800;
+            line-height: 1;
+        }
+        .funnel-body h3 { font-size: 1.25rem; margin-bottom: 8px; color: var(--text-main); }
+        .funnel-body p { color: var(--text-muted); font-size: 0.95rem; }
 
-        .card h3 {
-            font-size: 1.35rem;
-            font-weight: 700;
-            margin-bottom: 12px;
-            letter-spacing: -0.3px;
-        }
-
-        .card p {
-            color: var(--text-secondary);
-            font-size: 0.98rem;
-            line-height: 1.65;
-        }
+        /* Article Cards */
+        .article-card { display: flex; flex-direction: column; justify-content: space-between; }
+        .article-meta { font-size: 0.8rem; color: var(--accent-cyan); font-weight: 600; margin-bottom: 12px; text-transform: uppercase; }
 
         /* Footer */
-        footer {
-            padding: 50px 0;
-            border-top: 1px solid var(--card-border);
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
+        footer { padding: 40px 0; border-top: 1px solid var(--card-border); text-align: center; color: var(--text-dim); font-size: 0.88rem; }
 
-        /* Responsive */
-        @media (max-width: 900px) {
-            .hero {
-                grid-template-columns: 1fr;
-                text-align: center;
-                gap: 40px;
-            }
-            .profile-wrapper { order: -1; }
+        @media (max-width: 868px) {
+            .hero { grid-template-columns: 1fr; text-align: center; }
             .cta-group { justify-content: center; }
-            h1 { font-size: 2.8rem; }
+            .funnel-step { grid-template-columns: 1fr; gap: 8px; }
         }
     </style>
 </head>
 <body>
 
-    <div class="bg-mesh"></div>
-    <div class="bg-grid"></div>
-
     <div class="container">
-        <!-- Navigation -->
+        <!-- Navigation Bar -->
         <nav>
-            <div class="logo">
-                <span>LUFFY MILLER</span>
-            </div>
+            <div class="logo">LUFFY MILLER</div>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
-                <li><a href="#platform">Box Zilla</a></li>
                 <li><a href="#frameworks">Frameworks</a></li>
-                <li><a href="#articles">Articles</a></li>
+                <li><a href="#funnel">Growth Funnel</a></li>
+                <li><a href="articles/index.html">Articles</a></li>
+                <li><a href="#profiles-hub" class="nav-btn">Profiles & Hubs</a></li>
             </ul>
         </nav>
 
@@ -409,26 +226,23 @@
         <section class="hero" id="about">
             <div>
                 <div class="status-badge">
-                    <span class="status-dot"></span> Author & Growth Architect
+                    <span class="status-dot"></span> B2B Brand Growth Strategist
                 </div>
-                <h1>Engineering <span class="gradient-text">Brand Growth</span> & Packaging Architecture</h1>
+                <h1>Engineering Brand Growth & Packaging Architecture</h1>
                 <p>Architecting high-retention physical unboxing experiences, structural corrugation specs, and B2B growth frameworks for scaling e-commerce ecosystems.</p>
-                
                 <div class="cta-group">
                     <a href="#platform" class="btn btn-primary">Explore Platform Hub →</a>
-                    <a href="#articles" class="btn btn-secondary">Read Insights</a>
+                    <a href="articles/index.html" class="btn btn-secondary">Read Articles</a>
                 </div>
             </div>
-
-            <div class="profile-wrapper">
-                <div class="profile-card">
-                    <!-- Replace avatar URL with your actual image path when ready -->
-                    <img src="https://github.com/luffymiller.png" alt="Luffy Miller" class="profile-img" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80'">
+            <div class="profile-img-container">
+                <div class="profile-img-frame">
+                    <img src="https://github.com/luffymiller.png" alt="Luffy Miller" class="profile-img" onerror="this.src='https://via.placeholder.com/240'">
                 </div>
             </div>
         </section>
 
-        <!-- Featured Commercial Platform (Box Zilla Backlink Engine) -->
+        <!-- Featured Commercial Platform (Box Zilla) -->
         <div class="featured-banner" id="platform">
             <div class="featured-tag">Flagship Commercial Venture</div>
             <h2>Box Zilla Packaging Platform</h2>
@@ -438,40 +252,118 @@
             </a>
         </div>
 
-        <!-- Core Technical Frameworks -->
+        <!-- Core Strategic Frameworks -->
         <div class="section-header" id="frameworks">
             <h2 class="section-title">Strategic Core</h2>
         </div>
         <div class="grid">
             <div class="card">
-                <div class="card-icon">📦</div>
                 <h3>Structural Corrugation</h3>
                 <p>Engineering precise flute selection (E, B, C Flutes) and paper weight specs to balance compression strength with freight cost efficiency.</p>
             </div>
             <div class="card">
-                <div class="card-icon">✨</div>
                 <h3>Unboxing Architecture</h3>
                 <p>Designing high-retention structural unboxing physical touchpoints, magnetic rigid enclosures, and custom die-cut inserts.</p>
             </div>
             <div class="card">
-                <div class="card-icon">⚡</div>
                 <h3>Market Positioning</h3>
                 <p>Bridging the gap between physical structural quality and digital search authority to scale modern e-commerce brands.</p>
             </div>
         </div>
 
-        <!-- Case Studies & Published Articles -->
+        <!-- Author Social & Profile Backlinks Hub Section -->
+        <div class="section-header" id="profiles-hub">
+            <h2 class="section-title">Profiles & Hubs Network</h2>
+            <p class="section-desc">Connect with Luffy Miller across professional identity hubs, publications, and external authority profiles.</p>
+        </div>
+        <div class="profiles-grid">
+            <a href="https://about.me/luffymiller" target="_blank" class="profile-card">
+                <div class="profile-info"><h4>About.me</h4><span>Author Bio Profile</span></div>
+                <div class="profile-arrow">↗</div>
+            </a>
+            <a href="https://behance.net" target="_blank" class="profile-card">
+                <div class="profile-info"><h4>Behance</h4><span>Design & Case Studies</span></div>
+                <div class="profile-arrow">↗</div>
+            </a>
+            <a href="https://medium.com" target="_blank" class="profile-card">
+                <div class="profile-info"><h4>Medium</h4><span>Growth Strategy Essays</span></div>
+                <div class="profile-arrow">↗</div>
+            </a>
+            <a href="https://substack.com" target="_blank" class="profile-card">
+                <div class="profile-info"><h4>Substack</h4><span>B2B Growth Newsletter</span></div>
+                <div class="profile-arrow">↗</div>
+            </a>
+            <a href="https://github.com/luffymiller" target="_blank" class="profile-card">
+                <div class="profile-info"><h4>GitHub</h4><span>Code & Schema Repos</span></div>
+                <div class="profile-arrow">↗</div>
+            </a>
+            <a href="https://quora.com" target="_blank" class="profile-card">
+                <div class="profile-info"><h4>Quora</h4><span>Industry Q&A Authority</span></div>
+                <div class="profile-arrow">↗</div>
+            </a>
+            <a href="https://reddit.com" target="_blank" class="profile-card">
+                <div class="profile-info"><h4>Reddit</h4><span>Community Discussions</span></div>
+                <div class="profile-arrow">↗</div>
+            </a>
+            <a href="https://x.com" target="_blank" class="profile-card">
+                <div class="profile-info"><h4>X (Twitter)</h4><span>Daily Strategy Insights</span></div>
+                <div class="profile-arrow">↗</div>
+            </a>
+        </div>
+
+        <!-- B2B Brand Growth Funnel Section -->
+        <div class="funnel-container" id="funnel">
+            <div class="section-header" style="margin-top:0;">
+                <h2 class="section-title">The B2B Packaging Brand Growth Funnel</h2>
+                <p class="section-desc">How structural product design converts cold B2B leads into high-LTV brand advocates.</p>
+            </div>
+
+            <div class="funnel-step">
+                <div class="funnel-num">01</div>
+                <div class="funnel-body">
+                    <h3>Top of Funnel (TOFU) — Category Positioning & Authority</h3>
+                    <p>Capturing high-intent B2B traffic through technical packaging specifications, structural guidelines, and authoritative industry research. Establishing early trust before commercial intent matures.</p>
+                </div>
+            </div>
+
+            <div class="funnel-step">
+                <div class="funnel-num">02</div>
+                <div class="funnel-body">
+                    <h3>Middle of Funnel (MOFU) — Unboxing Architecture & Custom Engineering</h3>
+                    <p>Demonstrating tangible value through custom sample kits, flute compression stress tests, and unboxing retention metrics that solve real transit damage and product presentation pain points.</p>
+                </div>
+            </div>
+
+            <div class="funnel-step">
+                <div class="funnel-num">03</div>
+                <div class="funnel-body">
+                    <h3>Bottom of Funnel (BOFU) — Scalable Supply Chain Integration</h3>
+                    <p>Converting leads via seamless custom manufacturing quotes, tiered volume pricing, and automated packaging reordering frameworks engineered for long-term B2B retention.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Published Strategic Articles Section -->
         <div class="section-header" id="articles">
             <h2 class="section-title">Published Strategic Articles</h2>
+            <p class="section-desc">Technical breakdowns and growth frameworks published by Luffy Miller.</p>
         </div>
-        <div class="grid">
-            <div class="card">
-                <h3>Corrugated Flute Selection Guide</h3>
-                <p>Deep-dive into structural paper grades, fluting strength, and burst tests for transit durability.</p>
+        <div class="grid" style="margin-bottom: 80px;">
+            <div class="card article-card">
+                <div>
+                    <div class="article-meta">Corrugation Specs</div>
+                    <h3>Corrugated Flute Selection Guide</h3>
+                    <p>Deep-dive into structural paper grades, fluting strength, and burst tests for transit durability.</p>
+                </div>
+                <a href="articles/corrugated-flute-guide.html" class="btn btn-secondary" style="margin-top: 20px; font-size:0.85rem; padding:8px 16px; display:inline-block; text-align:center;">Read Article →</a>
             </div>
-            <div class="card">
-                <h3>The Architecture of Unboxing</h3>
-                <p>How structural packaging design directly drives customer retention and organic brand advocacy.</p>
+            <div class="card article-card">
+                <div>
+                    <div class="article-meta">Retention Design</div>
+                    <h3>The Architecture of Unboxing</h3>
+                    <p>How structural packaging design directly drives customer retention and organic brand advocacy.</p>
+                </div>
+                <a href="articles/unboxing-architecture.html" class="btn btn-secondary" style="margin-top: 20px; font-size:0.85rem; padding:8px 16px; display:inline-block; text-align:center;">Read Article →</a>
             </div>
         </div>
 
